@@ -9,11 +9,13 @@
 
 <h1>Kevin Joy Chemmanathel</h1>
 
+<img src="profile.jpg" width="180" style="border-radius:50%;">
+
 <p>Hello! I am Kevin. Welcome to my personal website.</p>
 
 <h2>About Me</h2>
 <p>
-I am interested in robotics, control systems, and computer science.
+Just contributing to the world with my research
 </p>
 
 <h2>Projects</h2>
@@ -24,6 +26,22 @@ I am interested in robotics, control systems, and computer science.
 
 <h2>Contact</h2>
 <p>Email: kevin.joy01@gmail.com</p>
+
+<hr>
+
+<p style="font-size:14px;color:gray;">
+Last updated: <span id="last-update"></span>
+</p>
+
+<script>
+fetch("https://api.github.com/repos/457crash/457crash.github.io/commits")
+.then(response => response.json())
+.then(data => {
+    const date = new Date(data[0].commit.committer.date);
+    const year = date.getFullYear();
+    document.getElementById("last-update").textContent = year;
+});
+</script>
 
 </body>
 </html>
