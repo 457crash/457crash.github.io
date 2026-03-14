@@ -77,18 +77,19 @@ justify-content:center;
 
 <h2>About Me</h2>
 <p>
-Contributing to the world with my research
+Just contributing to the world with my research
 </p>
-
-<h2>Projects</h2>
-<ul>
-<li>Self-Balancing robot</li>
-<li>Autonomous robot to manage hotel guest services</li></li>
-</ul>
 
 <h2>Education</h2>
 <ul>
-<li><b>B.Tech in Electrical Engineering</b> University of Mumbai </li>
+<li><b>B.Tech in Electrical Engineering</b> – Your University Name</li>
+<li><b>M.Tech in Control Systems</b> – Future University (planned)</li>
+</ul>
+
+<h2>Projects</h2>
+<ul>
+<li>Robotics Project 1</li>
+<li>Robotics Project 2</li>
 </ul>
 
 <h2>Profiles</h2>
@@ -105,4 +106,29 @@ Contributing to the world with my research
 
 <a href="https://twitter.com/YOUR-TWITTER">
 <i class="fa-brands fa-x-twitter"></i>
-</
+</a>
+
+<a href="https://github.com/457crash">
+<i class="fa-brands fa-github"></i>
+</a>
+
+</div>
+
+<hr>
+
+<p style="font-size:14px;color:gray;">
+Last updated: <span id="last-update"></span>
+</p>
+
+<script>
+fetch("https://api.github.com/repos/457crash/457crash.github.io/commits")
+.then(response => response.json())
+.then(data => {
+const date = new Date(data[0].commit.committer.date);
+const year = date.getFullYear();
+document.getElementById("last-update").textContent = year;
+});
+</script>
+
+</body>
+</html>
