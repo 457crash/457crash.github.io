@@ -5,41 +5,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
+
 body{
-    font-family: Arial;
-    max-width:700px;
-    margin:auto;
-    padding:40px 20px;
+font-family: Arial;
+max-width:700px;
+margin:auto;
+padding:40px 20px;
 }
 
 .header{
-    display:flex;
-    align-items:center;
-    gap:30px;
+display:flex;
+align-items:center;
+gap:30px;
 }
 
 .profile{
-    width:180px;
-    border-radius:50%;
+width:180px;
+border-radius:50%;
+}
+
+.profiles{
+font-size:28px;
+display:flex;
+gap:20px;
+}
+
+a{
+text-decoration:none;
+color:black;
+}
+
+a:hover{
+opacity:0.6;
 }
 
 /* Mobile responsiveness */
-@media (max-width:600px){
-    .header{
-        flex-direction:column;
-        text-align:center;
-    }
 
-    .profile{
-        width:140px;
-    }
+@media (max-width:600px){
+
+.header{
+flex-direction:column;
+text-align:center;
 }
+
+.profile{
+width:140px;
+}
+
+.profiles{
+justify-content:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- Header -->
 <div class="header">
 
 <img src="profile.jpg" class="profile">
@@ -62,8 +90,27 @@ Just contributing to the world with my research
 <li>Robotics Project 2</li>
 </ul>
 
-<h2>Contact</h2>
-<p>Email: kevin.joy01@gmail.com</p>
+<h2>Profiles</h2>
+
+<div class="profiles">
+
+<a href="mailto:kevin.joy01@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/kevin-joy-chemmanathel-001995117">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a href="https://x.com/KevinJoy364689">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+<a href="https://github.com/457crash">
+<i class="fa-brands fa-github"></i>
+</a>
+
+</div>
 
 <hr>
 
@@ -75,9 +122,9 @@ Last updated: <span id="last-update"></span>
 fetch("https://api.github.com/repos/457crash/457crash.github.io/commits")
 .then(response => response.json())
 .then(data => {
-    const date = new Date(data[0].commit.committer.date);
-    const year = date.getFullYear();
-    document.getElementById("last-update").textContent = year;
+const date = new Date(data[0].commit.committer.date);
+const year = date.getFullYear();
+document.getElementById("last-update").textContent = year;
 });
 </script>
 
