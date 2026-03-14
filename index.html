@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kevin Joy Chemmanathel</title>
-    <meta charset="UTF-8">
+<title>Kevin Joy Chemmanathel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+    font-family: Arial;
+    max-width:700px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.profile{
+    width:180px;
+    border-radius:50%;
+}
+
+/* Mobile responsiveness */
+@media (max-width:600px){
+    .header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .profile{
+        width:140px;
+    }
+}
+</style>
 </head>
 
-<body style="font-family: Arial; max-width:700px; margin:auto; padding:40px;">
+<body>
 
-<!-- Header section -->
-<div style="display:flex; align-items:center; gap:30px;">
+<div class="header">
 
-<img src="profile.jpg" width="180" style="border-radius:50%;">
+<img src="profile.jpg" class="profile">
 
 <div>
 <h1>Kevin Joy Chemmanathel</h1>
@@ -19,7 +51,6 @@
 
 </div>
 
-<!-- About section -->
 <h2>About Me</h2>
 <p>
 Just contributing to the world with my research
